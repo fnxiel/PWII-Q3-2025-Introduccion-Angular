@@ -1,0 +1,9 @@
+<h1>Artistas</h1>
+
+<ul>
+    @for (artista of artistasFiltrados; track artista){
+        <li>Id: {{artista.id}} - {{artista.nombre}}</li>
+    } @empty {
+        <h2>No hay artistas para mostrar</h2>
+    }
+</ul>

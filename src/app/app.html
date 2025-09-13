@@ -57,21 +57,17 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <h2>{{ descripcion }}</h2>
-      <h3>Peliculas</h3>
-      
-      <ul>
-        @for (pelicula of peliculas; track pelicula){
-          <app-pelicula 
-          [Clasificacion]="pelicula.Clasificacion"
-          [Duracion]="pelicula.Duracion"
-          [imagen]="pelicula.imagen"
-          [Anual]="pelicula.Anual" 
-          [titulo]="pelicula.titulo" 
-          />
-        } @empty {
-          <h2>No hay peliculas para mostrar</h2>
-        }
-      </ul>
+
+        <nav>
+         <ul>
+          <li><a routerLink="/artistas">Artistas</a></li>
+          <li><a routerLink="/peliculas">Peliculas</a></li>
+         </ul> 
+        </nav>
+       
+      <router-outlet />
+
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -178,4 +174,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet />
