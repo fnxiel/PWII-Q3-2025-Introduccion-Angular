@@ -9,3 +9,4 @@ export interface IPelicula{
     Clasificacion: "Todo publico" | "Mayores"| "Con supervision adulta"
     Puntaje: number
 }
+

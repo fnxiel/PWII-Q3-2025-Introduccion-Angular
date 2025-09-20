@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IArtista } from '../interfaces/IArtista';
+import { ColaReproduccion } from '../cola-reproduccion';
 
 @Component({
   selector: 'app-artistas',
@@ -12,7 +13,7 @@ export class Artistas implements OnInit {
   idArtista: number = 0
 
   //Inyeccion de dependecia
-  constructor(private ruta: ActivatedRoute){}
+  constructor(private ruta: ActivatedRoute, private colaReproduccionService: ColaReproduccion){}
 
   ngOnInit(): void {
     console.log("Inicializando el componente")
@@ -25,6 +26,7 @@ export class Artistas implements OnInit {
         this.artistasFiltrados = this.artistas.filter(artista => artista.id === this.idArtista)
       }
     })
+    this.colaReproduccionService.listarColaReproduccion()
   }
 
   artistas : IArtista[] = [

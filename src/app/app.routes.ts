@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Peliculas } from './peliculas/peliculas';
 import { Artistas } from './artistas/artistas';
+import { Pokedex } from './pokedex/pokedex';
 
 export const routes: Routes = [
     {
@@ -11,5 +12,8 @@ export const routes: Routes = [
     },
     {
         path: 'artistas', component: Artistas
+    },
+    {
+        path: 'pokedex', component: Pokedex
     }
 ];

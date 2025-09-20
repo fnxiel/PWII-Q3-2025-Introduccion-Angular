@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IPelicula } from '../interfaces/IPelicula';
 import { Pelicula } from '../pelicula/pelicula';
+import { ColaReproduccion } from '../cola-reproduccion';
 
 @Component({
   selector: 'app-peliculas',
@@ -8,7 +9,14 @@ import { Pelicula } from '../pelicula/pelicula';
   templateUrl: './peliculas.html',
   styleUrl: './peliculas.scss'
 })
-export class Peliculas {
+export class Peliculas implements OnInit {
+
+  constructor(public colaReproduccionService: ColaReproduccion){}
+
+  ngOnInit(): void {
+    this.colaReproduccionService.listarColaReproduccion()
+  }
+
   peliculas: IPelicula[] = [
     {
       imagen: {
@@ -53,4 +61,6 @@ export class Peliculas {
       Puntaje: 99
     }
   ]
+
+  
 }

@@ -62,11 +62,20 @@
          <ul>
           <li><a routerLink="/artistas">Artistas</a></li>
           <li><a routerLink="/peliculas">Peliculas</a></li>
+          <li><a routerLink="/pokedex">Pokedex</a></li>
          </ul> 
         </nav>
        
       <router-outlet />
 
+      <h2>Cola de reproduccion</h2>
+      <ul>
+      @for (peliculaResumen of colaReproduccionService.listarColaReproduccion(); track peliculaResumen) {
+          <li>
+            No. {{peliculaResumen.no}} - {{peliculaResumen.titulo}}
+          </li>
+      }
+      </ul>
 
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>

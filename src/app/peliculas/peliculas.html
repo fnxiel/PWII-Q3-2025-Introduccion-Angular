@@ -2,13 +2,16 @@
       
 <ul>
 @for (pelicula of peliculas; track pelicula){
-    <app-pelicula 
-    [Clasificacion]="pelicula.Clasificacion"
-    [Duracion]="pelicula.Duracion"
-    [imagen]="pelicula.imagen"
-    [Anual]="pelicula.Anual" 
-    [titulo]="pelicula.titulo" 
-    />
+    <div class="elemento-pelicula">
+        <app-pelicula 
+        [Clasificacion]="pelicula.Clasificacion"
+        [Duracion]="pelicula.Duracion"
+        [imagen]="pelicula.imagen"
+        [Anual]="pelicula.Anual" 
+        [titulo]="pelicula.titulo" 
+        />
+        <button (click)="this.colaReproduccionService.agregarPelicula(pelicula)" >Agregar a lista de reproduccion</button>
+    </div>
 } @empty {
     <h2>No hay peliculas para mostrar</h2>
 }
